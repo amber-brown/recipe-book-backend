@@ -1,20 +1,8 @@
-const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
+const app = require("./app");
+const config = require("./config");
 
-const Recipe = require("./models/recipe");
-
-const app = express();
-app.use(cors());
-
-app.get("/recipes", (req, res) => {
-  Recipe.find((err, recipes) => {
-    if (err) throw new Error("Cannot find recipes");
-    res.json(recipes);
-  });
-});
-
-mongoose.connect("mongodb://localhost/recipe-book", {
+mongoose.connect(config.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
