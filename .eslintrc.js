@@ -10,7 +10,11 @@ module.exports = {
     SharedArrayBuffer: "readonly",
     it: "readonly",
     describe: "readonly",
-    expect: "readonly"
+    expect: "readonly",
+    beforeAll: "readonly",
+    afterAll: "readonly",
+    beforeEach: "readonly",
+    afterEach: "readonly"
   },
   parserOptions: {
     ecmaVersion: 2018
