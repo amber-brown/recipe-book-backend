@@ -33,4 +33,11 @@ describe("test", () => {
     expect(res.status).toEqual(200);
     expect(res.text).toEqual(JSON.stringify([recipe]));
   });
+
+  it("returns a single recipe from the database", async () => {
+    const id = recipe._id;
+    const res = await request(app).get("/recipes/" + id);
+    expect(res.status).toEqual(200);
+    expect(res.text).toEqual(JSON.stringify(recipe));
+  });
 });
